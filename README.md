@@ -1,21 +1,22 @@
-# Hello world docker action
+# Automerge github action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action will automatically merge an open Pull request if all the
+tests have passed and the label `automerge` is set in the PR.
 
 ## Inputs
 
-### `who-to-greet`
+| Name | Description | Default | Required |
+| ---- | ----------- | ------- | -------- |
+| GITHUB_TOKEN | Github token for contacting the API |  | true|
+| label | Label of the PR to check for automerge. If label is not set, no action will be taken | automerge | false|
+| merge_method | Merge method. Valid options are Possible values are "merge", "squash" or "rebase". More details at https://docs.github.com/en/rest/reference/pulls#merge-a-pull-request | squash | false|
 
-**Required** The name of the person to greet. Default `"World"`.
+# Example usage
 
-## Outputs
 
-### `time`
-
-The time we greeted you.
-
-## Example usage
-
-uses: actions/hello-world-docker-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+```yaml
+- name: automerge
+  uses: mhristof/github-action-automerge@v1.0
+  with:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
