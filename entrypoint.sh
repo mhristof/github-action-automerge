@@ -31,6 +31,12 @@ function runs {
 RUNS=/tmp/runs.json
 PR=/tmp/pr.json
 
+if [[ ${INPUT_ASSERT_ACTION_REF:-} ]]; then
+    if [[ "${GITHUB_ACTION_REF}" != "${GITHUB_REF#refs/heads/}" ]]; then
+        die "Error, have you run 'make branch' before commiting ?"
+    fi
+fi
+
 while [[ "$(runs | tee $RUNS | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
     echo "Waiting for jobs to finish"
     jq '.check_runs[] | select(.status == "in_progress") .name' $RUNS -r

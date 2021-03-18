@@ -15,14 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     name: automerge
     steps:
-      - name: Check action branch (have you run 'make branch' ?)
-        run: grep "${GITHUB_REF#refs/heads/}" .github/workflows/main.yml
-        if: github.ref != 'refs/heads/master'
       - name: dog food (this branch)
         uses: mhristof/github-action-automerge@dont-fail-on-a-non-pr-build # THIS BRANCH
         if: github.ref != 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ASSERT_ACTION_REF: true
       - name: dog food (master)
         uses: mhristof/github-action-automerge@master
         if: github.ref == 'refs/heads/master'
