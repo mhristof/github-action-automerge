@@ -15,4 +15,8 @@ while [[ "$(runs | tee /tmp/runs.json | jq '[.check_runs[] | select(.status == "
     sleep 10
 done
 
-echo "$(runs)"
+runs
+
+if [[ "$(jq '.total_count - 1' /tmp/runs.json -r)" -ne "$(jq '[.check_runs[] | select(.conclusion != null and  .conclusion == "success") | .name] | length' /tmp/runs.json -r)" ]]; then
+    exit 1
+fi
