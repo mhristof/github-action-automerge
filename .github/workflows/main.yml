@@ -1,6 +1,11 @@
 on: [push]
 
 jobs:
+  wait:
+    runs-on: ubuntu-latest
+    name: sleep
+    steps:
+      - run: sleep 25s
   hello_world_job:
     runs-on: ubuntu-latest
     name: dogfood
