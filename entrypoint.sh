@@ -6,7 +6,6 @@ function runs {
     curl --header "authorization: Bearer $INPUT_GITHUB_TOKEN" \
         --header 'content-type: application/json' \
         --silent \
-        -i \
         "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/check-runs"
 }
 
