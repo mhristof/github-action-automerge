@@ -5,8 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
+    - name: dog food
       uses: mhristof/github-action-automerge@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
