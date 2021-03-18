@@ -16,6 +16,6 @@ jobs:
     name: automerge
     steps:
     - name: dog food
-      uses: mhristof/github-action-automerge@master
+      uses: mhristof/github-action-automerge@${GITHUB_REF##*/}
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
