@@ -15,14 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     name: automerge
     steps:
-      # Just add this  => 
-      - name: Inject slug/short variables
-        uses: rlespinasse/github-slug-action@v3.x
       - name: Set branch
         id: branch
         run: echo '::set-output name=BRANCH::${GITHUB_REF##*/}'
       - run: echo ${{ steps.branch.outputs.BRANCH }}
       - name: dog food
-        uses: mhristof/github-action-automerge@master
+        uses: mhristof/github-action-automerge@${{ steps.branch.outputs.BRANCH }}
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
