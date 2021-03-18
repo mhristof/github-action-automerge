@@ -17,7 +17,7 @@ repos:
   hooks:
     - id: shellcheck
     - id: shfmt
-- repo: github.com/IamTheFij/docker-pre-commit
+- repo: https://github.com/IamTheFij/docker-pre-commit
   rev: 2.0.0
   hooks:
     - id: hadolint
