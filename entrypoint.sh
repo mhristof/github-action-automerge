@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -euo pipefail
+set -x
 
 die() { echo "$*" 1>&2 ; exit 1; }
 
@@ -59,6 +60,8 @@ case "${INPUT_MERGE_METHOD:-}" in
 esac
 
 PR_URL=$(jq .url $PR -r)
+
+echo "URL is $PR_URL"
 
 if [[ "$PR_URL" != *"/pulls/" ]]; then
     echo "This doesnt seem to be a Pull request. Please submit a but if you it is [$PR_URL]"
