@@ -64,6 +64,4 @@ case "${INPUT_MERGE_METHOD:-}" in
     *) die "Error, unknown merge method $INPUT_MERGE_METHOD";;
 esac
 
-PR_URL=$(jq .url $PR -r)
-
 api "$(jq .url $PR -r )/merge" "PUT" "{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}"
