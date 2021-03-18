@@ -3,12 +3,12 @@ on: [push]
 jobs:
   badJob:
     runs-on: ubuntu-latest
-    name: sleep
+    name: bad job
     steps:
       - run: /bin/false
   goodJob:
     runs-on: ubuntu-latest
-    name: sleep
+    name: good job
     steps:
       - run: /bin/true
   wait:

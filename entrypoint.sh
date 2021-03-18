@@ -14,3 +14,5 @@ while [[ "$(runs | tee /tmp/runs.json | jq '[.check_runs[] | select(.status == "
     jq '.check_runs[] | select(.status == "in_progress") .name' /tmp/runs.json -r
     sleep 10
 done
+
+echo "$(runs)"
