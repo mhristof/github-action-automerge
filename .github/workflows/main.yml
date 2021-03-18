@@ -18,7 +18,7 @@ jobs:
       - run: sleep 25s
   hello_world_job:
     runs-on: ubuntu-latest
-    name: dogfood
+    name: automerge
     steps:
     - name: dog food
       uses: mhristof/github-action-automerge@setup-auth
