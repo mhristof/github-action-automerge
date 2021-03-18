@@ -13,7 +13,8 @@ function runs {
 set
 echo "current run $GITHUB_RUN_ID"
 
-while [[ "$(runs | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
-    echo "Waiting for jobs to finish"
-    sleep 10
-done
+echo "$(runs)"
+#while [[ "$(runs | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
+    #echo "Waiting for jobs to finish"
+    #sleep 10
+#done
