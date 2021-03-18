@@ -6,6 +6,10 @@ inputs:
     description: 'Label of the PR to check for automerge. If label is not set, no action will be taken'
     required: false
     default: 'automerge'
+  merge_method:
+    description: 'Merge method. Valid options are Possible values are "merge", "squash" or "rebase". More details at https://docs.github.com/en/rest/reference/pulls#merge-a-pull-request'
+    required: false
+    default: 'squash'
   GITHUB_TOKEN:
     description: 'Github token for contacting the API'
     required: true
