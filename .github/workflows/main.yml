@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     name: automerge
     steps:
-      - name: Set branch
-        id: branch
-        run: echo '::set-output name=BRANCH::${GITHUB_REF##*/}'
-      - run: echo ${{ steps.branch.outputs.BRANCH }}
-      - name: dog food
-        uses: mhristof/github-action-automerge@${{ steps.branch.outputs.BRANCH }}
+      - name: dog food (main)
+        uses: mhristof/github-action-automerge@$THISBRANCH
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: dog food (main)
+        uses: mhristof/github-action-automerge@$main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
