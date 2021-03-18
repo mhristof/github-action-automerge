@@ -21,5 +21,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: dog food (main)
         uses: mhristof/github-action-automerge@main
+        if: github.ref == 'refs/heads/main'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
