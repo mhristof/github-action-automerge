@@ -1,12 +1,26 @@
 on: [push]
 
 jobs:
+#badJob:
+#runs-on: ubuntu-latest
+#name: bad job
+#steps:
+#- run: /bin/false
+  goodJob:
+    runs-on: ubuntu-latest
+    name: good job
+    steps:
+      - run: /bin/true
+  wait:
+    runs-on: ubuntu-latest
+    name: sleep
+    steps:
+      - run: sleep 25s
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: automerge
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: mhristof/github-action-automerge@master
+    - name: dog food
+      uses: mhristof/github-action-automerge@setup-auth
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
