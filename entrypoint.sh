@@ -24,17 +24,20 @@ while [[ "$(runs | tee $RUNS | jq '[.check_runs[] | select(.status == "in_progre
     sleep 10
 done
 
-cat $RUNS
-
 if [[ "$(jq '.total_count - 1' $RUNS -r)" -ne "$(jq '[.check_runs[] | select(.conclusion != null and  .conclusion == "success") | .name] | length' /tmp/runs.json -r)" ]]; then
     echo 'Failure founds, exiting'
     exit 1
 fi
 
+PR=/tmp/pr.json
 
-if [[ "$(api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" | jq '.labels | index( "automerge" )')" == "null" ]]; then
+api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
+
+# shellcheck disable=SC2154
+# shellcheck disable=SC2086
+if [[ "$(jq '.labels | index( "'$INPUT_label'" )' $PR)" == "null" ]]; then
     echo "Label not found - skipping automerge"
     exit 0
 fi
 
-echo "merging PR"
+echo "merging PR $(jq .api $PR -r )/merge"
