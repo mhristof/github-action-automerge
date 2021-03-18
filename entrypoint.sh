@@ -36,22 +36,20 @@ api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
 
 jq '.labels' $PR
 
-set
-echo "label to check is ${INPUT_label:-}"
+echo "label to check is ${INPUT_LABEL:-}"
 
 # shellcheck disable=SC2154
 # shellcheck disable=SC2086
-if [[ "$(jq '[.labels[] | select(.name == "'${INPUT_label:-}'")] | length' $PR)" == "1" ]]; then
+if [[ "$(jq '[.labels[] | select(.name == "'${INPUT_LABEL:-}'")] | length' $PR)" == "1" ]]; then
     echo "Label not found - skipping automerge"
     exit 0
 fi
 
-METHOD="${INPUT_merge_method:-}"
-case "$METHOD" in
+case "${INPUT_MERGE_METHOD:-}" in
     merge|squash|rebase)
         :
         ;;
-    *) die "Error, unknown merge method $METHOD";;
+    *) die "Error, unknown merge method $INPUT_MERGE_METHOD";;
 esac
 
-echo "merging PR $(jq .url $PR -r )/merge -d '{\"merge_method\": \"${INPUT_merge_method:-}\"}'"
+echo "merging PR $(jq .url $PR -r )/merge -d '{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}'"
