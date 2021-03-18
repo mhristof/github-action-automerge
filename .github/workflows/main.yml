@@ -1,6 +1,11 @@
 on: [push]
 
 jobs:
+  goodJob:
+    runs-on: ubuntu-latest
+    name: sleep
+    steps:
+      - run: /bin/true
   wait:
     runs-on: ubuntu-latest
     name: sleep
@@ -14,4 +19,3 @@ jobs:
       uses: mhristof/github-action-automerge@setup-auth
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        JOB_CONTEXT: ${{ toJSON(job) }}

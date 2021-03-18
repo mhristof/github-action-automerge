@@ -9,8 +9,6 @@ inputs:
   GITHUB_TOKEN:
     description: 'Github token for contacting the API'
     required: true
-  JOB_CONTEXT:
-    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
