@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+die() { echo "$*" 1>&2 ; exit 1; }
 function api {
     local url
     url=$1
@@ -42,5 +43,13 @@ if [[ "$(jq '[.labels[] | select(.name == "'${INPUT_label:-}'")] | length' $PR)"
     echo "Label not found - skipping automerge"
     exit 0
 fi
+
+METHOD="${INPUT_merge_method:-}"
+case "$METHOD" in
+    merge|squash|rebase)
+        :
+        ;;
+    *) die "Error, unknown merge method $METHOD";;
+esac
 
 echo "merging PR $(jq .url $PR -r )/merge -d '{\"merge_method\": \"${INPUT_merge_method:-}\"}'"
