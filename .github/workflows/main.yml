@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     name: automerge
     steps:
-    - name: Extract branch name
-      shell: bash
-      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      id: extract_branch
-    - name: dog food
-      uses: mhristof/github-action-automerge@${{ steps.extract_branch.outputs.branch }}
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: dog food
+        uses: mhristof/github-action-automerge@${{ steps.extract_branch.outputs.branch }}
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
