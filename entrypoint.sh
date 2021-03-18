@@ -3,13 +3,24 @@
 set -euo pipefail
 
 die() { echo "$*" 1>&2 ; exit 1; }
+
+# args:
+# $1: the url to curl
+# $2: method, defaults to GET
+# $3: data, defaults to '{}'
 function api {
     local url
+    local method
+    local data
     url=$1
+    method="${2:-GET}"
+    data="${3:-'{}'}"
 
     curl --header "authorization: Bearer $INPUT_GITHUB_TOKEN" \
+        -X "$method" \
         -H "Accept: application/vnd.github.v3+json" \
         --header 'content-type: application/json' \
+        -d "$data" \
         --silent "$url"
     }
 
@@ -18,6 +29,7 @@ function runs {
 }
 
 RUNS=/tmp/runs.json
+PR=/tmp/pr.json
 
 while [[ "$(runs | tee $RUNS | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
     echo "Waiting for jobs to finish"
@@ -30,15 +42,7 @@ if [[ "$(jq '.total_count - 1' $RUNS -r)" -ne "$(jq '[.check_runs[] | select(.co
     exit 1
 fi
 
-PR=/tmp/pr.json
-
 api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
-
-jq '.labels' $PR
-jq '[.labels[] | select(.name == "'${INPUT_LABEL:-}'")]' $PR
-jq '[.labels[] | select(.name == "'${INPUT_LABEL:-}'")] | length' $PR
-
-echo "label to check is ${INPUT_LABEL:-}"
 
 # shellcheck disable=SC2154
 # shellcheck disable=SC2086
@@ -54,4 +58,4 @@ case "${INPUT_MERGE_METHOD:-}" in
     *) die "Error, unknown merge method $INPUT_MERGE_METHOD";;
 esac
 
-echo "merging PR $(jq .url $PR -r )/merge -d '{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}'"
+api "$(jq .url $PR -r )/merge" "PUT" "{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}"
