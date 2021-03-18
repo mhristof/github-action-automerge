@@ -38,7 +38,7 @@ echo "label to check is ${INPUT_label:-}"
 
 # shellcheck disable=SC2154
 # shellcheck disable=SC2086
-if [[ "$(jq '.labels | index( "'${INPUT_label:-}'" )' $PR)" == "null" ]]; then
+if [[ "$(jq '[.labels[] | select(.name == "'${INPUT_label:-}'")] | length' $PR)" == "1" ]]; then
     echo "Label not found - skipping automerge"
     exit 0
 fi
