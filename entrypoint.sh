@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -euo pipefail
-set -x
 
 die() { echo "$*" 1>&2 ; exit 1; }
 
@@ -32,6 +31,12 @@ function runs {
 RUNS=/tmp/runs.json
 PR=/tmp/pr.json
 
+if [[ ${INPUT_ASSERT_ACTION_REF:-} ]]; then
+    if [[ "${GITHUB_ACTION_REF}" != "${GITHUB_REF#refs/heads/}" ]]; then
+        die "Error, have you run 'make branch' before commiting ?"
+    fi
+fi
+
 while [[ "$(runs | tee $RUNS | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
     echo "Waiting for jobs to finish"
     jq '.check_runs[] | select(.status == "in_progress") .name' $RUNS -r
@@ -41,6 +46,11 @@ done
 if [[ "$(jq '.total_count - 1' $RUNS -r)" -ne "$(jq '[.check_runs[] | select(.conclusion != null and  .conclusion == "success") | .name] | length' /tmp/runs.json -r)" ]]; then
     echo 'Failure founds, exiting'
     exit 1
+fi
+
+if [[ "$(jq '.check_runs[0].pull_requests | length' $RUNS)" == "0" ]]; then
+    echo "This doesnt seem to be a Pull request."
+    exit 0
 fi
 
 api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
@@ -58,14 +68,5 @@ case "${INPUT_MERGE_METHOD:-}" in
         ;;
     *) die "Error, unknown merge method $INPUT_MERGE_METHOD";;
 esac
-
-PR_URL=$(jq .url $PR -r)
-
-echo "URL is $PR_URL"
-
-if [[ "$PR_URL" != *"/pulls/" ]]; then
-    echo "This doesnt seem to be a Pull request. Please submit a but if you it is [$PR_URL]"
-    exit 0
-fi
 
 api "$(jq .url $PR -r )/merge" "PUT" "{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}"

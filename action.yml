@@ -13,6 +13,9 @@ inputs:
   GITHUB_TOKEN:
     description: 'Github token for contacting the API'
     required: true
+  ASSERT_ACTION_REF:
+    description: 'Assert the running version of the action matches the branch name. Used for debug'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
