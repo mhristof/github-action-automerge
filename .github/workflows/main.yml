@@ -1,11 +1,11 @@
 on: [push]
 
 jobs:
-  badJob:
-    runs-on: ubuntu-latest
-    name: bad job
-    steps:
-      - run: /bin/false
+#badJob:
+#runs-on: ubuntu-latest
+#name: bad job
+#steps:
+#- run: /bin/false
   goodJob:
     runs-on: ubuntu-latest
     name: good job
