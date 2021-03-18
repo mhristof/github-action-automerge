@@ -1,0 +1,517 @@
+{
+  "check_runs": [
+    {
+      "app": {
+        "created_at": "2018-07-30T09:30:17Z",
+        "description": "Automate your workflow from idea to production",
+        "events": [
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "milestone",
+          "page_build",
+          "project",
+          "project_card",
+          "project_column",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ],
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "id": 15368,
+        "name": "GitHub Actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/github",
+          "id": 9919,
+          "login": "github",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/github"
+        },
+        "permissions": {
+          "actions": "write",
+          "checks": "write",
+          "contents": "write",
+          "deployments": "write",
+          "issues": "write",
+          "metadata": "read",
+          "organization_packages": "write",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "slug": "github-actions",
+        "updated_at": "2019-12-10T19:04:12Z"
+      },
+      "check_suite": {
+        "id": 2290284114
+      },
+      "completed_at": "2021-03-18T16:50:20Z",
+      "conclusion": "failure",
+      "details_url": "https://github.com/mhristof/github-action-automerge/runs/2141697853",
+      "external_id": "ff127e2a-552f-5fbe-42f7-1f8a0599b373",
+      "head_sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856",
+      "html_url": "https://github.com/mhristof/github-action-automerge/runs/2141697853",
+      "id": 2141697853,
+      "name": "bad job",
+      "node_id": "MDg6Q2hlY2tSdW4yMTQxNjk3ODUz",
+      "output": {
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697853/annotations",
+        "summary": "There are 1 failures, 0 warnings, and 0 notices.",
+        "text": null,
+        "title": "bad job"
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "master",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "e71f68c813c76074d787cab749a13928b681d664"
+          },
+          "head": {
+            "ref": "setup-auth",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856"
+          },
+          "id": 595706019,
+          "number": 1,
+          "url": "https://api.github.com/repos/mhristof/github-action-automerge/pulls/1"
+        }
+      ],
+      "started_at": "2021-03-18T16:50:20Z",
+      "status": "completed",
+      "url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697853"
+    },
+    {
+      "app": {
+        "created_at": "2018-07-30T09:30:17Z",
+        "description": "Automate your workflow from idea to production",
+        "events": [
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "milestone",
+          "page_build",
+          "project",
+          "project_card",
+          "project_column",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ],
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "id": 15368,
+        "name": "GitHub Actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/github",
+          "id": 9919,
+          "login": "github",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/github"
+        },
+        "permissions": {
+          "actions": "write",
+          "checks": "write",
+          "contents": "write",
+          "deployments": "write",
+          "issues": "write",
+          "metadata": "read",
+          "organization_packages": "write",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "slug": "github-actions",
+        "updated_at": "2019-12-10T19:04:12Z"
+      },
+      "check_suite": {
+        "id": 2290284114
+      },
+      "completed_at": "2021-03-18T16:50:20Z",
+      "conclusion": "success",
+      "details_url": "https://github.com/mhristof/github-action-automerge/runs/2141697769",
+      "external_id": "e2009910-709a-583e-1af0-23f8fa0900ca",
+      "head_sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856",
+      "html_url": "https://github.com/mhristof/github-action-automerge/runs/2141697769",
+      "id": 2141697769,
+      "name": "good job",
+      "node_id": "MDg6Q2hlY2tSdW4yMTQxNjk3NzY5",
+      "output": {
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697769/annotations",
+        "summary": null,
+        "text": null,
+        "title": null
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "master",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "e71f68c813c76074d787cab749a13928b681d664"
+          },
+          "head": {
+            "ref": "setup-auth",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856"
+          },
+          "id": 595706019,
+          "number": 1,
+          "url": "https://api.github.com/repos/mhristof/github-action-automerge/pulls/1"
+        }
+      ],
+      "started_at": "2021-03-18T16:50:20Z",
+      "status": "completed",
+      "url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697769"
+    },
+    {
+      "app": {
+        "created_at": "2018-07-30T09:30:17Z",
+        "description": "Automate your workflow from idea to production",
+        "events": [
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "milestone",
+          "page_build",
+          "project",
+          "project_card",
+          "project_column",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ],
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "id": 15368,
+        "name": "GitHub Actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/github",
+          "id": 9919,
+          "login": "github",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/github"
+        },
+        "permissions": {
+          "actions": "write",
+          "checks": "write",
+          "contents": "write",
+          "deployments": "write",
+          "issues": "write",
+          "metadata": "read",
+          "organization_packages": "write",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "slug": "github-actions",
+        "updated_at": "2019-12-10T19:04:12Z"
+      },
+      "check_suite": {
+        "id": 2290284114
+      },
+      "completed_at": "2021-03-18T16:50:46Z",
+      "conclusion": "success",
+      "details_url": "https://github.com/mhristof/github-action-automerge/runs/2141697694",
+      "external_id": "1c69a038-85d7-598e-0cea-ba0cf6c420f8",
+      "head_sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856",
+      "html_url": "https://github.com/mhristof/github-action-automerge/runs/2141697694",
+      "id": 2141697694,
+      "name": "sleep",
+      "node_id": "MDg6Q2hlY2tSdW4yMTQxNjk3Njk0",
+      "output": {
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697694/annotations",
+        "summary": null,
+        "text": null,
+        "title": null
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "master",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "e71f68c813c76074d787cab749a13928b681d664"
+          },
+          "head": {
+            "ref": "setup-auth",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856"
+          },
+          "id": 595706019,
+          "number": 1,
+          "url": "https://api.github.com/repos/mhristof/github-action-automerge/pulls/1"
+        }
+      ],
+      "started_at": "2021-03-18T16:50:21Z",
+      "status": "completed",
+      "url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697694"
+    },
+    {
+      "app": {
+        "created_at": "2018-07-30T09:30:17Z",
+        "description": "Automate your workflow from idea to production",
+        "events": [
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "milestone",
+          "page_build",
+          "project",
+          "project_card",
+          "project_column",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ],
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "id": 15368,
+        "name": "GitHub Actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "gravatar_id": "",
+          "html_url": "https://github.com/github",
+          "id": 9919,
+          "login": "github",
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "site_admin": false,
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "type": "Organization",
+          "url": "https://api.github.com/users/github"
+        },
+        "permissions": {
+          "actions": "write",
+          "checks": "write",
+          "contents": "write",
+          "deployments": "write",
+          "issues": "write",
+          "metadata": "read",
+          "organization_packages": "write",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "slug": "github-actions",
+        "updated_at": "2019-12-10T19:04:12Z"
+      },
+      "check_suite": {
+        "id": 2290284114
+      },
+      "completed_at": null,
+      "conclusion": null,
+      "details_url": "https://github.com/mhristof/github-action-automerge/runs/2141697583",
+      "external_id": "68b1582f-1651-524a-f2d3-c8aa89e9eff5",
+      "head_sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856",
+      "html_url": "https://github.com/mhristof/github-action-automerge/runs/2141697583",
+      "id": 2141697583,
+      "name": "dogfood",
+      "node_id": "MDg6Q2hlY2tSdW4yMTQxNjk3NTgz",
+      "output": {
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697583/annotations",
+        "summary": null,
+        "text": null,
+        "title": null
+      },
+      "pull_requests": [
+        {
+          "base": {
+            "ref": "master",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "e71f68c813c76074d787cab749a13928b681d664"
+          },
+          "head": {
+            "ref": "setup-auth",
+            "repo": {
+              "id": 349122848,
+              "name": "github-action-automerge",
+              "url": "https://api.github.com/repos/mhristof/github-action-automerge"
+            },
+            "sha": "d86791d28c79aa3132881dcc0ee46aab6c7aa856"
+          },
+          "id": 595706019,
+          "number": 1,
+          "url": "https://api.github.com/repos/mhristof/github-action-automerge/pulls/1"
+        }
+      ],
+      "started_at": "2021-03-18T16:50:20Z",
+      "status": "in_progress",
+      "url": "https://api.github.com/repos/mhristof/github-action-automerge/check-runs/2141697583"
+    }
+  ],
+  "total_count": 4
+}
