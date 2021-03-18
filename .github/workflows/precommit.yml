@@ -1,0 +1,14 @@
+
+name: precommit
+
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          pip install pre-commit
+          pre-commit run --all-files
