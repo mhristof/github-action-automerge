@@ -3,7 +3,7 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: dogfood
     steps:
     - name: dog food
       uses: mhristof/github-action-automerge@master
