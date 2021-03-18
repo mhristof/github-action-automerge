@@ -43,6 +43,10 @@ if [[ "$(jq '.total_count - 1' $RUNS -r)" -ne "$(jq '[.check_runs[] | select(.co
     exit 1
 fi
 
+if [[ "$(jq '.check_runs[0].pull_requests | length' $RUNS)" == "0" ]]; then
+    echo "This doesnt seem to be a Pull request. Please submit a but if you it is [$PR_URL]"
+    exit 0
+fi
 api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
 
 # shellcheck disable=SC2154
@@ -60,12 +64,5 @@ case "${INPUT_MERGE_METHOD:-}" in
 esac
 
 PR_URL=$(jq .url $PR -r)
-
-echo "URL is $PR_URL"
-
-if [[ "$PR_URL" != *"/pulls/" ]]; then
-    echo "This doesnt seem to be a Pull request. Please submit a but if you it is [$PR_URL]"
-    exit 0
-fi
 
 api "$(jq .url $PR -r )/merge" "PUT" "{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}"
