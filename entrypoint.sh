@@ -1,5 +1,5 @@
-#!/bin/sh -l
+#!/bin/bash
 
-echo "Hello $1"
-time=$(date)
-echo "::set-output name=time::$time"
+set -euo pipefail
+
+echo "current run $GITHUB_RUN_ID"

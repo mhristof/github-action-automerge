@@ -1,16 +1,16 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Automerge PR'
+description: 'Automatically merge a PR if all the checks pass'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  label:
+    description: 'Label of the PR to check for automerge. If label is not set, no action will be taken'
+    required: false
+    default: 'automerge'
+  GITHUB_TOKEN:
+    description: 'Github token for contacting the API'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.label }}
