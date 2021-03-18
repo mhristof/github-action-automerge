@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          pip install pre-commit
-          pre-commit run --all-files
+      - name: install precommit
+        run: pip install pre-commit
+      - name: run pre-commit
+        run: pre-commit run --all-files
