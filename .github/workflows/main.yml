@@ -16,7 +16,7 @@ jobs:
     name: automerge
     steps:
       - name: dog food (main)
-        uses: mhristof/github-action-automerge@$THISBRANCH
+        uses: mhristof/github-action-automerge@dont-fail-on-a-non-pr-build # THIS BRANCH
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: dog food (main)
