@@ -23,6 +23,6 @@ jobs:
         run: echo '::set-output name=BRANCH::${GITHUB_REF##*/}'
       - run: echo ${{ steps.branch.outputs.BRANCH }}
       - name: dog food
-        uses: mhristof/github-action-automerge@${{ env.GITHUB_REF_SLUG }}
+        uses: mhristof/github-action-automerge@master
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
