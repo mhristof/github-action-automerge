@@ -14,3 +14,4 @@ jobs:
       uses: mhristof/github-action-automerge@setup-auth
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        JOB_CONTEXT: ${{ toJSON(job) }}

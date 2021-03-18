@@ -4,7 +4,7 @@ set -euo pipefail
 
 set
 echo "current run $GITHUB_RUN_ID"
-echo "${INPUT_JOB}"
+echo "${INPUT_JOB_CONTEXT}"
 curl --header "authorization: Bearer $INPUT_GITHUB_TOKEN" \
         --header 'content-type: application/json' \
         -i \
