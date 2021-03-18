@@ -8,7 +8,7 @@ tests have passed and the label `automerge` is set in the PR.
 
 ```yaml
 - name: automerge
-  uses: mhristof/github-action-automerge@v1.0
+  uses: mhristof/github-action-automerge@v1.0.1
   with:
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
