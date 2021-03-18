@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: dog food (this branch)
         uses: mhristof/github-action-automerge@dont-fail-on-a-non-pr-build # THIS BRANCH
-        if: github.ref != 'refs/heads/main'
+        if: github.ref != 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: dog food (main)
-        uses: mhristof/github-action-automerge@main
-        if: github.ref == 'refs/heads/main'
+      - name: dog food (master)
+        uses: mhristof/github-action-automerge@master
+        if: github.ref == 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
