@@ -9,7 +9,8 @@ function runs {
         "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/check-runs"
 }
 
-while [[ "$(runs | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
+while [[ "$(runs | tee /tmp/runs.json | jq '[.check_runs[] | select(.status == "in_progress") .status] | length')" -ne 1 ]]; do
     echo "Waiting for jobs to finish"
+    jq '.check_runs[] | select(.status == "in_progress") .name' /tmp/runs.json -r
     sleep 10
 done
