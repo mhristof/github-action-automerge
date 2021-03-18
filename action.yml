@@ -10,7 +10,7 @@ inputs:
     description: 'Github token for contacting the API'
     required: true
   JOB:
-    default: ${{ job }}
+    default: "${{ job }}"
 runs:
   using: 'docker'
   image: 'Dockerfile'
