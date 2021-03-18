@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -euo pipefail
-set -x
 
 die() { echo "$*" 1>&2 ; exit 1; }
 
@@ -58,5 +57,12 @@ case "${INPUT_MERGE_METHOD:-}" in
         ;;
     *) die "Error, unknown merge method $INPUT_MERGE_METHOD";;
 esac
+
+PR_URL=$(jq .url $PR -r)
+
+if [[ "$PR_URL" != *"/pulls/" ]]; then
+    echo "This doesnt seem to be a Pull request. Please submit a but if you it is [$PR_URL]"
+    exit 0
+fi
 
 api "$(jq .url $PR -r )/merge" "PUT" "{\"merge_method\": \"${INPUT_MERGE_METHOD:-}\"}"
