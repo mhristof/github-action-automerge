@@ -43,4 +43,4 @@ if [[ "$(jq '[.labels[] | select(.name == "'${INPUT_label:-}'")] | length' $PR)"
     exit 0
 fi
 
-echo "merging PR $(jq .api $PR -r )/merge"
+echo "merging PR $(jq .url $PR -r )/merge"
