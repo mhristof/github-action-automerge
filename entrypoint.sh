@@ -35,6 +35,8 @@ PR=/tmp/pr.json
 api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
 
 jq '.labels' $PR
+jq '[.labels[] | select(.name == "'${INPUT_LABEL:-}'")]' $PR
+jq '[.labels[] | select(.name == "'${INPUT_LABEL:-}'")] | length' $PR
 
 echo "label to check is ${INPUT_LABEL:-}"
 
