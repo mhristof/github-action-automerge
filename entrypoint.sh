@@ -32,6 +32,9 @@ if [[ "$(jq '.total_count - 1' $RUNS -r)" -ne "$(jq '[.check_runs[] | select(.co
 fi
 
 
-if [[ "$(api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" | jq '.labels | index( "automerge" )')" != "null" ]]; then
-    echo "merging PR"
+if [[ "$(api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" | jq '.labels | index( "automerge" )')" == "null" ]]; then
+    echo "Label not found - skipping automerge"
+    exit 0
 fi
+
+echo "merging PR"
