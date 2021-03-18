@@ -35,7 +35,7 @@ api "$(jq '.check_runs[0].pull_requests[0].url' $RUNS -r)" > $PR
 
 # shellcheck disable=SC2154
 # shellcheck disable=SC2086
-if [[ "$(jq '.labels | index( "'$INPUT_label'" )' $PR)" == "null" ]]; then
+if [[ "$(jq '.labels | index( "'${INPUT_label:-}'" )' $PR)" == "null" ]]; then
     echo "Label not found - skipping automerge"
     exit 0
 fi
