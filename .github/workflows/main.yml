@@ -16,7 +16,7 @@ jobs:
     name: automerge
     steps:
       - name: dog food (this branch)
-        uses: mhristof/github-action-automerge@update-docs # THIS BRANCH
+        uses: mhristof/github-action-automerge@bump-curl # THIS BRANCH
         if: github.ref != 'refs/heads/master'
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
